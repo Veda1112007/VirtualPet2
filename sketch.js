@@ -8,7 +8,7 @@ function preload()
 {
 dog= loadImage("images/dogImg.png");
 happyDog= loadImage("images/dogImg1.png");
-milkImage = loadImage("images/milk.png");
+milkImage = loadImage("images/Milk.png");
 
 }
 
@@ -43,27 +43,16 @@ background(26,139,87)
       
   dogSprite.addImage(happyDog);
 
+  console.log(foodStock);
 
   for(i=0;i<foodStock;i++){
-    image(milkImage,50*i+50,250,20,30);
-    // m  ilk.addImage(milkImage);
-    // milk.scale=0.1;
+    var milk =createSprite(50*i+50,250,20,30);
+    milk.addImage(milkImage);
+    milk.scale=0.1;
+    milk.lifetime= 100;
   }
     }
 }
-function keyPressed(){
-  if(keyWentDown(UP_ARROW)){
-  //  writeStock(foodS);
-  if(foodS>0){
 
-    foodS=foodS-1
-      database.ref('/').update({
-        Food:foodS
-      });
-  }
-    
-dogSprite.addImage(happyDog);
-  }
-}
 
 
